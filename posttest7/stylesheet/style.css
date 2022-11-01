@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* bagian dark-mode */
+.dark-mode {
+    background-color: black;
+    color: #ffff;
+}
+
+.dark-mode .header {
+    background-color: black;
+    /* color: #ffff; */
+}
+
+.dark-mode .isi-diri table {
+    color: #ffff;
+}
+
+.dark-mode .main-content {
+    background-color: black;
+    color: #ffff;
+}
+
+.dark-mode .bar-clossing {
+    background-color: black;
+    /* color: #ffff; */
+}
+
+input[type="text"] {
+    width: 500px;
+    height: 40px;
+    font-size: 32px;
+}
+
+li {
+    list-style: none;
+    float: left;
+    padding: 33px 20px;
+}
+/* bagian header */
+.header {
+    background-color: #A7FFE4;
+    color: #256D85;
+    height: 280px;
+}
+
+
+.header-about li {
+    float: right;
+    font-size: 32px;
+    /* margin-top: 80px; */
+    /* padding: 20px; */
+}
+
+.header-logo {
+    font-size: 32px;
+    float: left;
+    padding: 20px 40px;
+}
+
+.header-list {
+    padding: 20px;
+    font-size: 32px;
+}
+/* bagian main web */
+.main-content {
+    background-color: #F8EDE3;
+    
+}
+
+.copy-container h2 {
+    padding-top: 30px;
+    font-size: 32px;
+}
+
+.copy-container ul {
+    display: flex;
+    flex-direction: row;
+    max-width: auto;
+    overflow-x: auto;
+    text-align: left;
+    font-size: 22px;
+    color: black;
+}
+
+.copy-container li {
+    margin: 15px;
+    box-shadow: 10px 10px 15px lightgray ;
+    
+}
+
+/* .content_list {
+    text-align: left;
+    font-size: 22px;
+    color: black;
+} */
+
+/* .ubahwarna {
+    color: red;
+} */
+/* bagian footer */
+.footer h2 {
+    color: #256D85;
+    font-size: 32px;
+}
+
+.foto {
+    float: left;
+}
+
+.isi-diri table{
+    padding-left: 10%;
+    text-align: left;
+    font-size: 32px;
+}
+
+.bar-clossing {
+    padding: 16px;
+    background-color: #A7FFE4;
+    color:#256D85;
+    height: 70px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+/* CSS FORMULIR */
+body .form {
+    background-color: #F8EDE3;
+}
+
+.head {
+    padding: 45px;
+    background-color: #A7FFE4;
+}
+
+.head h1 {
+    color: #256D85;
+    text-align: center;
+    font-size: 50px;
+}
+
+.badan form {
+    padding: 30px;
+    text-align: center;
+}
+
+.badan label {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+input[type="int"] {
+    width: 500px;
+    height: 40px;
+    font-size: 32px;
+}
+
+input[type="submit"] {
+    width: 150px;
+    height: 40px;
+    font-size: 32px;
+}
+
+input[type="radio"] {
+    width: 150px;
+    height: 40px;
+    font-size: 32px;
+}
+
+.footer-form {
+    padding: 16px;
+    /* padding-top: 50px; */
+    background-color: #A7FFE4;
+    color:#256D85;
+    height: 70px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.ganti-warna {
+color: red;
+}

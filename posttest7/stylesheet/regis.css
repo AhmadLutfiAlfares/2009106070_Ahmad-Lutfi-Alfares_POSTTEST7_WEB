@@ -8,7 +8,6 @@ body {
 }
 
 .header {
-    background-color: #A7FFE4;
     color: #256D85;
 }
 
@@ -21,27 +20,25 @@ body {
 
 .form-regis {
     width: 50%;
-    padding: 5%;
+    padding: 50px;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
     background-color: white;
-    border-radius: 25px;
-
+    border-radius: 15px;
     font-size: medium;
-    font-family: 'Poppins', sans-serif;
 }
 
-.form {
-    padding-top: 30px;
-}
-
-.form-login a{
+.form-regis a{
     text-decoration: none;
     color: blue;
 }
 
+.form-regis form input{
+    border-radius: 25px;
+
+}
 .input {
     margin: 10px 0px;
     padding: 10px 5px;

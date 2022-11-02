@@ -1,14 +1,19 @@
 <?php
 require "config.php";
-$id = (int) $_GET['id'];
-if(isset($id)){
-    // $query = mysqli_query($db, "SELECT  id_pemilik, merk_hp, tahun_pemakaian, telepon, alamat, harga JOIN pemilik ON handphone.id_hp = pemilik.id_pemilik WHERE id = $id");
-    $query = mysqli_query($db, "SELECT * FROM handphone INNER JOIN pemilik ON handphone.id_pemilik = pemilik.id_pemilik INNER JOIN gambar ON pemilik.id_pemilik = gambar.id_pemilik WHERE handphone.id_pemilik = '$id'");
-    $result = mysqli_fetch_array($query);
-    // $query = mysqli_query($db, "SELECT * FROM gambar INNER JOIN pemilik ON pemilik.id_pemilik = gambar.id_pemilik");
-    // $gambar = mysqli_fetch_array($query);
 
-    
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        header("Location: login.php");
+        exit;
+    }
+
+    $id = (int) $_GET['id'];
+    if(isset($id)){
+        // $query = mysqli_query($db, "SELECT  id_pemilik, merk_hp, tahun_pemakaian, telepon, alamat, harga JOIN pemilik ON handphone.id_hp = pemilik.id_pemilik WHERE id = $id");
+        $query = mysqli_query($db, "SELECT * FROM handphone INNER JOIN pemilik ON handphone.id_pemilik = pemilik.id_pemilik INNER JOIN gambar ON pemilik.id_pemilik = gambar.id_pemilik WHERE handphone.id_pemilik = '$id'");
+        $result = mysqli_fetch_array($query);
+        // $query = mysqli_query($db, "SELECT * FROM gambar INNER JOIN pemilik ON pemilik.id_pemilik = gambar.id_pemilik");
+        // $gambar = mysqli_fetch_array($query);
 }
 ?>
 

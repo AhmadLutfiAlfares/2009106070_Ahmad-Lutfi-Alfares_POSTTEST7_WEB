@@ -1,9 +1,15 @@
-<!-- <?php
+<?php
 include "config.php";
+
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
 
 // $sql = "SELECT * FROM smartphone INNER JOIN penjual ON smartphone.id_produk=penjual.id_penjual"; 
 // $query = mysqli_query($db, $sql);
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +26,12 @@ include "config.php";
     </div>
     <div class="main" style="overflow-x: auto;">
     <h3><a href="landingPage.php">Kembali</a></h3>
+    <div>
+        <form action="" method="get">
+            <input type="text" name="searching" placeholder="Cari berdasarkan nama" class="search">
+            <input type="submit" name="cari" class="search">
+            </form>
+    </div>
         <table>
             <thead>
                 <tr>

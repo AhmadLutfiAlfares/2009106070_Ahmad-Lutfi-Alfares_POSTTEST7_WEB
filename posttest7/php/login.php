@@ -1,5 +1,7 @@
 <?php
+    session_start();
     require "config.php";
+
     if(isset($_POST['submit'])) {
         $user = $_POST['user'];
         $password = $_POST['password'];
@@ -8,17 +10,20 @@
         $result = mysqli_fetch_assoc($query);
         $username = $result['username'];
         if(password_verify($password, $result['password'])) {
+            $_SESSION['login'] = true;
             echo "
             <script>
                 alert('Selamat Datang $username!');     
                 document.location.href='landingPage.php';
             </script>";
+            exit;
         } else {
             echo "
             <script>
                 alert('Username atau Password salah!');
             </script>";
         }
+        $error = true;
     }
 ?>
 
@@ -39,6 +44,9 @@
     </div>
     <div class="form-login">
         <h3>Login</h3>
+        <?php if(isset($error)) {
+            echo "<p style='color: red;'>Username atau Password Salah!</p>";
+        } ?>
         <form action="" method="post">
             <input type="text" name="user" placeholder="email atau username" class="input">
             <input type="password" name="password" placeholder="password" class="input">

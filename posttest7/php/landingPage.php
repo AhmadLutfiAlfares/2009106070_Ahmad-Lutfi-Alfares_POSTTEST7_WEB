@@ -1,8 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
 // variabel kosong
 $nama = $nim = $umur = $prodi = $angkatan = $gender = "";
 
-session_start();
 if(isset($_POST["submitForm"])){
     $_SESSION["submitForm"] = $_POST["submitForm"];
     $_SESSION["nama"] = $_POST["nama"];
@@ -48,7 +52,7 @@ if(isset($_POST["submitForm"])){
         <div class="header-about">
             <ul>
                 <b>
-                    <li id="btnLogout" onmousemove="Cursor()"><a href="index.php" style="text-decoration: none;">LOGOUT</a></li>
+                    <li id="btnLogout" onmousemove="Cursor()"><a href="logout.php" style="text-decoration: none;">LOGOUT</a></li>
                     <li id="btnWarna" onmousemove="Cursor()">Ubah Warna Teks</li>
                     <li id="about" onmousemove="Cursor()">About</li>    
                     <li id="dark-mode" onmousemove="Cursor()">Dark Mode</li>

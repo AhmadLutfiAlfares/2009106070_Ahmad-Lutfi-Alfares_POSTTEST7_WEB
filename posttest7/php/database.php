@@ -58,9 +58,15 @@ if (!isset($_SESSION['login'])) {
                 <?php
                 require "config.php";
 
+                if(isset($_GET['cari'])) {
+                    $search = $_GET['searching'];
+                    $query = mysqli_query($db, "SELECT * FROM handphone INNER JOIN pemilik ON handphone.id_pemilik = pemilik.id_pemilik INNER JOIN gambar ON handphone.id_pemilik = gambar.id_pemilik WHERE nama_pemilik LIKE '%$search%'");
+                    // $query = mysqli_query($db, "SELECT * FROM pemilik WHERE nama_pemilik LIKE '%$search%'");
+                } else {
+                    $query = mysqli_query($db, "SELECT * FROM handphone INNER JOIN pemilik ON handphone.id_pemilik = pemilik.id_pemilik INNER JOIN gambar ON handphone.id_pemilik = gambar.id_pemilik");
+                    // $i = 1;
+                }
                 // $query = mysqli_query($db, "SELECT handphone.id_hp AS id, pemilik.nama_pemilik, merk_hp, tahun_pemakaian, pemilik.no_telepon, pemilik.alamat, harga FROM handphone JOIN pemilik ON pemilik.id_pemilik = handphone.id_hp");
-                $query = mysqli_query($db, "SELECT * FROM handphone INNER JOIN pemilik ON handphone.id_pemilik = pemilik.id_pemilik INNER JOIN gambar ON handphone.id_pemilik = gambar.id_pemilik");
-                // $i = 1;
                 while ($row = mysqli_fetch_assoc($query)) {
                     ?>
                     <tr>

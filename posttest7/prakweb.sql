@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Okt 2022 pada 04.43
+-- Waktu pembuatan: 02 Nov 2022 pada 07.48
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `akun`
+--
+
+CREATE TABLE `akun` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `akun`
+--
+
+INSERT INTO `akun` (`id`, `nama`, `username`, `email`, `password`) VALUES
+(1, 'Ahmad Lutfi Alfares', 'lutfi', 'ahmadlutfialfares7@gmail.com', '$2y$10$w0DRiMU6V88GlGbtD4jL6.19QEuaFb0CO7oGU9bDQlSF0rG0UYkQC'),
+(2, '', 'root', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `gambar`
 --
 
@@ -40,7 +62,9 @@ CREATE TABLE `gambar` (
 --
 
 INSERT INTO `gambar` (`id_gambar`, `id_pemilik`, `nama_file`, `file`, `waktu`) VALUES
-(22, 65, 'Me', 'Me.jpg', '2022-10-27 10:43:13');
+(22, 65, 'Me', 'Me.jpg', '2022-10-27 10:55:30'),
+(23, 65, 'file', 'file.jpg', '2022-11-02 13:31:20'),
+(24, 67, 'asdfadf', 'asdfadf.jpg', '2022-11-02 13:32:05');
 
 -- --------------------------------------------------------
 
@@ -61,7 +85,9 @@ CREATE TABLE `handphone` (
 --
 
 INSERT INTO `handphone` (`id_hp`, `id_pemilik`, `merk_hp`, `tahun_pemakaian`, `harga`) VALUES
-(63, 65, 'iphone 11', 2021, '7.500.000');
+(63, 65, 'LINUX PINGUIN', 2021, '7.500.000'),
+(64, 66, 'iphone 11', 2020, '30.000.000'),
+(65, 67, 'kkfs', 2323, 'fadskjflakd');
 
 -- --------------------------------------------------------
 
@@ -81,11 +107,19 @@ CREATE TABLE `pemilik` (
 --
 
 INSERT INTO `pemilik` (`id_pemilik`, `nama_pemilik`, `no_telepon`, `alamat`) VALUES
-(65, 'lutfi', '082352089835', 'Jalan Pelita');
+(65, 'lutfi', '082352089835', 'Jalan Pelita'),
+(66, 'Lutfi', '082352089835', 'jl. ngekek'),
+(67, 'kkkk', '90891237847', 'jalsdfaksdf');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `akun`
+--
+ALTER TABLE `akun`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `gambar`
@@ -112,22 +146,28 @@ ALTER TABLE `pemilik`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `akun`
+--
+ALTER TABLE `akun`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `gambar`
 --
 ALTER TABLE `gambar`
-  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `handphone`
 --
 ALTER TABLE `handphone`
-  MODIFY `id_hp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id_hp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT untuk tabel `pemilik`
 --
 ALTER TABLE `pemilik`
-  MODIFY `id_pemilik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id_pemilik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

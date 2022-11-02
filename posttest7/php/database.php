@@ -26,10 +26,10 @@ if (!isset($_SESSION['login'])) {
     </div>
     <div class="main" style="overflow-x: auto;">
     <h3><a href="landingPage.php">Kembali</a></h3>
-    <div>
+    <div class="searching">
         <form action="" method="get">
             <input type="text" name="searching" placeholder="Cari berdasarkan nama" class="search">
-            <input type="submit" name="cari" class="search">
+            <input type="submit" name="cari" class="submit">
             </form>
     </div>
         <table>

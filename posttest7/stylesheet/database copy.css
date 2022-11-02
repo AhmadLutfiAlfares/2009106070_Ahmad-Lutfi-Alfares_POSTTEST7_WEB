@@ -87,20 +87,8 @@ table a {
 }
 
 .search {
-    width: 200px;
     height: 25px;
     font-size: auto;
-    border-radius: 10px;
-}
-
-.submit {
+    float: left;
     border-radius: 20px;
-    height: 25px;
-    font-size: auto;
-    width: 100px;
-    background-color: #5bbbdb;
-    color: white;
-}
-.submit:hover {
-    background-color: #09556e;
 }
